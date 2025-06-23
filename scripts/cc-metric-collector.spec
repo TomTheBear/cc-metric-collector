@@ -54,14 +54,14 @@ install -Dpm 0644 scripts/%{name}.sysusers %{buildroot}%{_sysusersdir}/%{name}.c
 
 %files
 # Binary
-%attr(-,clustercockpit,clustercockpit) %{_bindir}/%{name}
+%attr(-,monitoring,monitoring) %{_bindir}/%{name}
 # Config
 %dir %{_sysconfdir}/%{name}
-%attr(0600,clustercockpit,clustercockpit) %config(noreplace) %{_sysconfdir}/%{name}/%{name}.json
-%attr(0600,clustercockpit,clustercockpit) %config(noreplace) %{_sysconfdir}/%{name}/collectors.json
-%attr(0600,clustercockpit,clustercockpit) %config(noreplace) %{_sysconfdir}/%{name}/sinks.json
-%attr(0600,clustercockpit,clustercockpit) %config(noreplace) %{_sysconfdir}/%{name}/receivers.json
-%attr(0600,clustercockpit,clustercockpit) %config(noreplace) %{_sysconfdir}/%{name}/router.json
+%attr(0600,monitoring,monitoring) %config(noreplace) %{_sysconfdir}/%{name}/%{name}.json
+%attr(0600,monitoring,monitoring) %config(noreplace) %{_sysconfdir}/%{name}/collectors.json
+%attr(0600,monitoring,monitoring) %config(noreplace) %{_sysconfdir}/%{name}/sinks.json
+%attr(0600,monitoring,monitoring) %config(noreplace) %{_sysconfdir}/%{name}/receivers.json
+%attr(0600,monitoring,monitoring) %config(noreplace) %{_sysconfdir}/%{name}/router.json
 # Systemd
 %{_unitdir}/%{name}.service
 %{_sysconfdir}/default/%{name}
@@ -69,7 +69,7 @@ install -Dpm 0644 scripts/%{name}.sysusers %{buildroot}%{_sysusersdir}/%{name}.c
 
 %changelog
 * Thu Mar 03 2022 Thomas Gruber - 0.3
-- Add clustercockpit user installation
+- Add monitoring user installation
 * Mon Feb 14 2022 Thomas Gruber - 0.2
 - Add component specific configuration files
 - Add %attr to config files
